@@ -14,11 +14,17 @@
               username: 'luciano'
             }
           },
+          handleChange: function(e){
+            this.setState({
+              username: e.target.value
+            });
+          },
           render: function(){
             return (
-              <p>
-                Hello <strong>{this.state.username}</strong>
-              </p>
+              <div>
+                Hello {this.state.username} <br />
+                Change Name: <input type="text" value={this.state.username} onChange={this.handleChange} />
+              </div>
             )
           }
         });
