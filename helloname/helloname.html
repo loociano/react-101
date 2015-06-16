@@ -10,10 +10,9 @@
     <script type="text/jsx">
       var HelloUser = React.createClass({
           getInitialState: function(){
-            var username = "luciano";
             return {
-              username: username,
-              length: username.length
+              username: this.props.name,
+              length: this.props.name.length
             }
           },
           handleChange: function(e){
@@ -32,7 +31,7 @@
           }
         });
 
-    React.render(<HelloUser />, document.getElementById('app'));
+    React.render(<HelloUser name="luciano"/>, document.getElementById('app'));
     </script>
   </body>
 </html>
