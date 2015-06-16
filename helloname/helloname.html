@@ -10,19 +10,22 @@
     <script type="text/jsx">
       var HelloUser = React.createClass({
           getInitialState: function(){
+            var username = "luciano";
             return {
-              username: 'luciano'
+              username: username,
+              length: username.length
             }
           },
           handleChange: function(e){
             this.setState({
-              username: e.target.value
+              username: e.target.value,
+              length: e.target.value.length
             });
           },
           render: function(){
             return (
               <div>
-                Hello {this.state.username} <br />
+                Hello {this.state.username} ({this.state.length} characters)<br />
                 Change Name: <input type="text" value={this.state.username} onChange={this.handleChange} />
               </div>
             )
